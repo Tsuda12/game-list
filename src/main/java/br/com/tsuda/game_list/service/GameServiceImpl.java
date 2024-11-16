@@ -1,10 +1,12 @@
 package br.com.tsuda.game_list.service;
 
+import br.com.tsuda.game_list.controller.response.GameMinResponseDTO;
 import br.com.tsuda.game_list.controller.response.GameResponseDTO;
 import br.com.tsuda.game_list.domain.entity.Game;
 import br.com.tsuda.game_list.domain.repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -15,9 +17,18 @@ public class GameServiceImpl implements GameService {
     private GameRepository gameRepository;
 
     @Override
-    public List<GameResponseDTO> findAll() {
+    @Transactional(readOnly = true)
+    public List<GameMinResponseDTO> findAll() {
         List<Game> response = gameRepository.findAll();
 
-        return response.stream().map(GameResponseDTO::new).toList();
+        return response.stream().map(GameMinResponseDTO::new).toList();
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public GameResponseDTO findById(Long id) {
+        Game game = gameRepository.findById(id).get();
+
+        return new GameResponseDTO(game);
     }
 }
