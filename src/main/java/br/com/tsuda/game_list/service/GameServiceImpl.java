@@ -4,6 +4,7 @@ import br.com.tsuda.game_list.controller.response.GameMinResponseDTO;
 import br.com.tsuda.game_list.controller.response.GameResponseDTO;
 import br.com.tsuda.game_list.domain.entity.Game;
 import br.com.tsuda.game_list.domain.repository.GameRepository;
+import br.com.tsuda.game_list.service.interfaces.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
