@@ -1,4 +1,4 @@
-package br.com.tsuda.game_list.domain.entities;
+package br.com.tsuda.game_list.domain.entity;
 
 import jakarta.persistence.*;
 
