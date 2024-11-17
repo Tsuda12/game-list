@@ -10,4 +10,6 @@ public interface GameService {
     List<GameMinResponseDTO> findAll();
 
     GameResponseDTO findById(Long id);
+
+    List<GameMinResponseDTO> findByList(Long listId);
 }

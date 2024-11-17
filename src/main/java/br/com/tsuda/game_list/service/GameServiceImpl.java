@@ -4,6 +4,7 @@ import br.com.tsuda.game_list.controller.response.GameMinResponseDTO;
 import br.com.tsuda.game_list.controller.response.GameResponseDTO;
 import br.com.tsuda.game_list.domain.entity.Game;
 import br.com.tsuda.game_list.domain.repository.GameRepository;
+import br.com.tsuda.game_list.domain.repository.projection.GameMinProjection;
 import br.com.tsuda.game_list.service.interfaces.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,5 +32,12 @@ public class GameServiceImpl implements GameService {
         Game game = gameRepository.findById(id).get();
 
         return new GameResponseDTO(game);
+    }
+
+    @Override
+    public List<GameMinResponseDTO> findByList(Long listId) {
+        List<GameMinProjection> response = gameRepository.searchByList(listId);
+
+        return response.stream().map(GameMinResponseDTO::new).toList();
     }
 }

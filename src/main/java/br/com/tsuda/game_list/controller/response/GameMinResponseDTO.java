@@ -1,6 +1,7 @@
 package br.com.tsuda.game_list.controller.response;
 
 import br.com.tsuda.game_list.domain.entity.Game;
+import br.com.tsuda.game_list.domain.repository.projection.GameMinProjection;
 
 public class GameMinResponseDTO {
 
@@ -18,6 +19,14 @@ public class GameMinResponseDTO {
         year = entity.getYear();
         imgUrl = entity.getImgUrl();
         shortDescription = entity.getShortDescription();
+    }
+
+    public GameMinResponseDTO(GameMinProjection projection) {
+        id = projection.getId();
+        title = projection.getTitle();
+        year = projection.getYear();
+        imgUrl = projection.getImgUrl();
+        shortDescription = projection.getShortDescription();
     }
 
     public Long getId() {
