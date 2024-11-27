@@ -11,7 +11,7 @@
 
 ### Status 📈
 - [x] Em desenvolvimento
-- [] Concluído
+- [ ] Concluído
 
 ### Tools
 - Java 21
