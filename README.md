@@ -1,4 +1,4 @@
-# Med Clinic API 🏥
+# Game List API 🎮
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Tsuda12/game-list-api?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/Tsuda12/game-list-api?style=for-the-badge)
